@@ -1,4 +1,4 @@
-// Определение Backgorund
+// Inizialization Backgorund
 const preloaderLib = document.querySelector('preloaderlib');
       preloaderLib.classList.add('preloader');
 const pbgDetect = document.querySelector(`preloaderlib`);
@@ -15,7 +15,7 @@ switch (preloaderLib) {
         break;
 }
 
-//Определение s-name
+//Inizialization s-name
 const snameDetect = document.querySelector(`preloaderlib`);
 const detectedSname = snameDetect.attributes[1].value;
 const snameOur = document.querySelector(`preloaderlib[s-name="${detectedSname}"]`)
@@ -23,11 +23,11 @@ const snameOur2 = document.querySelector(`preloaderlib[s-name=""]`)
 // defult Animation 
 const defaultAnim = document.querySelector(`preloaderlib[s-name="default"]`);
 const defaultDiv = document.createElement('div');
-      defaultDiv.classList.add('loader');
+      defaultDiv.classList.add('loader', 'color');
 // Specefic Anim
 const circleLinesAnim = document.querySelector(`preloaderlib[s-name="circle-lines"]`);
 const circleLinesDiv = document.createElement('div');
-      circleLinesDiv.classList.add('circle-lines');
+      circleLinesDiv.classList.add('circle-lines', 'color');
       circleLinesDiv.innerHTML = `
       <span class="circle-lines-span"></span>
       <span class="circle-lines-span"></span>
@@ -56,13 +56,13 @@ CubeDiv.innerHTML = `
 const sStandAnim =document.querySelector(`preloaderlib[s-name="ice-cream"]`);
 const sStandDiv = document.createElement('div');
 sStandDiv.innerHTML = `
-<img src="./library//img/ice-cream.gif" alt="ise-cream">
+<img src="./Omnis/preloader-module//img/ice-cream.gif" alt="ise-cream">
 `
 // animation rocket
 const rocketAnim = document.querySelector(`preloaderlib[s-name="rocket"]`);
 const rocketDiv = document.createElement('div');
 rocketDiv.innerHTML = `
-<img src="./library//img/rocket.gif" alt="rocket">
+<img src="./Omnis/preloader-module//img/rocket.gif" alt="rocket">
 `
 
 if(snameOur != snameOur2) {
@@ -87,24 +87,82 @@ if(snameOur != snameOur2) {
     console.log('lol')
 }
 
+// s-color
+const detectedCname = snameDetect.attributes[2].value;
+const sColorOur = document.querySelector(`preloaderlib[s-color="${detectedCname}"]`)
+const defaultColor = document.querySelector(`preloaderlib[s-color="default"]`);
+const nothingColor = document.querySelector(`preloaderlib[s-color=""]`);
+
+const colorsAnim = [
+    'indianRed',
+    'lightCoral',
+    'salmon',
+    'darkSalmon',
+    'lightSalmon',
+    'crimson',
+    'red',
+    'pink',
+    'lightPink',
+    'hotPink',
+    'coral',
+    'darkOrange',
+    'green',
+    'mediumSpringGreen',
+    'lime',
+    'rosyBrown',
+    'brown',
+    'maroon',
+    'aqua',
+    'steelBlue',
+    'purple',
+    'slateBlue',
+    'indigo',
+    'yellow'
+]
+
+
+if (sColorOur != nothingColor) {
+    if (sColorOur === defaultColor) {
+        preloaderLib.style.setProperty('--color-for-anim', '#fcba03')
+    }
+    if(detectedCname[0] === '#' && detectedCname.length >= 4) {
+        preloaderLib.style.setProperty(`--color-for-anim`, `${detectedCname}`)
+        console.log('это работает')
+    } else if (detectedCname[0] === '#' && detectedCname.length <= 4){
+        preloaderLib.style.setProperty('--color-for-anim', '#fcba03')
+    }
+    // if(detectedCname === colorsAnim[0,1,2])
+    for(let i = 0; i < colorsAnim.length;i++) {
+        if (detectedCname === colorsAnim[i]) {
+            preloaderLib.style.setProperty(`--color-for-anim`, `${detectedCname}`)
+            console.log(detectedCname)
+        }
+        // console.log(colorsAnim[i])
+    }
+    
+} else {
+    
+    preloaderLib.style.setProperty('--color-for-anim', '#fcba03')
+    
+}
 
 // delete 
-window.onload = function () {
-    const preloaderlib = document.querySelector('preloaderlib');
-    const scrolPreloader = document.querySelector('body');
+// window.onload = function () {
+//     const preloaderlib = document.querySelector('preloaderlib');
+//     const scrolPreloader = document.querySelector('body');
 
-    setTimeout(() => {
-        (function addAnim() {
-            preloaderlib.classList.add('glide-anim');
-        })()
+//     setTimeout(() => {
+//         (function addAnim() {
+//             preloaderlib.classList.add('glide-anim');
+//         })()
 
         
-    },1200);
+//     },1200);
 
-    setTimeout(() => {
-        preloaderlib.classList.remove('preloaderlib');
-        preloaderlib.remove();
-    },1500)
+//     setTimeout(() => {
+//         preloaderlib.classList.remove('preloaderlib');
+//         preloaderlib.remove();
+//     },1500)
    
-};
+// };
 

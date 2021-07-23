@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+  --color-for-anim:  #fcba03;
+}
+
 .preloader {
     align-items: center;
     background-color: #2C2F33;
@@ -15,7 +20,7 @@
 .loader,
 .loader:before,
 .loader:after {
-  background: #ffffff;
+  background: var(--color-for-anim);
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
@@ -86,7 +91,7 @@
     width: 35px;
     height: 8px;
     border-radius: 4px;
-    background: #ffffff;
+    background: var(--color-for-anim);
     position: absolute;
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
@@ -220,7 +225,7 @@
     height: 100%;
     /* background-color: #f24d41;
      */
-    background-color: #ffffff;
+    background-color: var(--color-for-anim);
     -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
     animation: sk-foldCubeAngle 2.4s infinite linear both;
     -webkit-transform-origin: 100% 100%;
