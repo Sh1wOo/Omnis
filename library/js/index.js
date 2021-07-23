@@ -12,7 +12,6 @@ const sNameDetect = document.querySelector(`preloaderlib`);
 
 const detectedSname = sNameDetect.attributes[0].value;
 const sNameOur = document.querySelector(`preloaderlib[s-name="${detectedSname}"]`);
-// print(detectedSname);
 
 
 function changeOurColor() {
@@ -46,4 +45,3 @@ switch (preloaderLib) {
         changeColorDark();
         break;
 }
-
