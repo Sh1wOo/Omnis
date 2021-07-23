@@ -3,45 +3,55 @@ const print = (something) => {
 }
 
 const preloaderLib = document.querySelector('preloaderlib');
+preloaderLib.classList.add('preloader');
 
-const sNameWhite = document.querySelector('preloaderlib[s-name="white"]');
 const sNameDark = document.querySelector('preloaderlib[s-name="dark"]');
-const sNameYellow = document.querySelector('preloaderlib[s-name="yellow"]');
 
 const sNameDetect = document.querySelector(`preloaderlib`);
 
 const detectedSname = sNameDetect.attributes[0].value;
+
 const sNameOur = document.querySelector(`preloaderlib[s-name="${detectedSname}"]`);
 
-
 function changeOurColor() {
-    document.body.style.backgroundColor = `${detectedSname}`;
+    document.getElementsByClassName('preloader')[0].style.backgroundColor = `${detectedSname}`;
+
+
     print(`${detectedSname} is detected`);
 } 
-function changeColorDark() {
-    document.body.style.backgroundColor = "#2C2F33";
-    print('dark is detected')
-}
-function changeColorWhite() {
-    document.body.style.backgroundColor = "#FFFFFF";
-    print('white is detected')
-}
-function changeColorYellow() {
-    document.body.style.backgroundColor = "#e8e85f";
-    print('yellow is detected')
-}
 
 switch (preloaderLib) {
-    case sNameWhite:
-        changeColorWhite();
-        break;
-    case sNameYellow:
-        changeColorYellow();
-        break;
     case sNameOur:
-        changeOurColor()
-        break;
-    default:
-        changeColorDark();
+            changeOurColor()
         break;
 }
+
+window.onload = function () {
+    const preloader = document.querySelector('preloaderlib');
+    const scrolPreloader = document.querySelector('body');
+
+    // (function addPr() {
+    //     scrolPreloader.classList.add('scrol-preloader');
+    // })()
+    
+    // function removePr() {
+    //     scrolPreloader.classList.remove('scrol-preloader');
+    // }
+
+    // setTimeout(() => {
+    //     (function addAnim() {
+    //         preloader.classList.add('glide-anim');
+    //         removePr();
+    //     })()
+
+        
+    // },1e3);
+
+    setTimeout(() => {
+        preloader.classList.remove('preloader');
+        preloader.remove();
+    },1300)
+    print('Preloader-lib-Working');
+};
+// print(sNameOur.attributes[0])
+

@@ -2,3 +2,13 @@
     margin: 0;
     padding: 0;
 }
+.preloader {
+    align-items: center;
+    background-color: #2C2F33;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
