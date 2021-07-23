@@ -147,22 +147,22 @@ if (sColorOur != nothingColor) {
 }
 
 // delete 
-// window.onload = function () {
-//     const preloaderlib = document.querySelector('preloaderlib');
-//     const scrolPreloader = document.querySelector('body');
+window.onload = function () {
+    const preloaderlib = document.querySelector('preloaderlib');
+    const scrolPreloader = document.querySelector('body');
 
-//     setTimeout(() => {
-//         (function addAnim() {
-//             preloaderlib.classList.add('glide-anim');
-//         })()
+    setTimeout(() => {
+        (function addAnim() {
+            preloaderlib.classList.add('glide-anim');
+        })()
 
         
-//     },1200);
+    },1200);
 
-//     setTimeout(() => {
-//         preloaderlib.classList.remove('preloaderlib');
-//         preloaderlib.remove();
-//     },1500)
+    setTimeout(() => {
+        preloaderlib.classList.remove('preloaderlib');
+        preloaderlib.remove();
+    },1500)
    
-// };
+};
 
