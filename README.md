@@ -1,3 +1,3 @@
 # newLibrary
 New library with @NoPoker @Farneser.
-Nopoker can run and fly!
+Nopoker can run!
