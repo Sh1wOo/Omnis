@@ -39,7 +39,7 @@ const circleLinesDiv = document.createElement('div');
       <span class="circle-lines-span"></span>
       `
 // Cube Anim
-const CubeAnim =document.querySelector(`preloaderlib[s-name="Cube"]`);
+const CubeAnim =document.querySelector(`preloaderlib[s-name="cube"]`);
 const CubeDiv = document.createElement('div');
 CubeDiv.classList.add('wrapper')
 CubeDiv.innerHTML = `
@@ -86,28 +86,25 @@ if(snameOur != snameOur2) {
     preloaderLib.appendChild(defaultDiv)
     console.log('lol')
 }
-console.log(snameOur)
 
 
-// удаление 
-// window.onload = function () {
-//     const preloader = document.querySelector('preloaderlib');
-//     const scrolPreloader = document.querySelector('body');
+// delete 
+window.onload = function () {
+    const preloaderlib = document.querySelector('preloaderlib');
+    const scrolPreloader = document.querySelector('body');
 
-//     // setTimeout(() => {
-//     //     (function addAnim() {
-//     //         preloader.classList.add('glide-anim');
-//     //         removePr();
-//     //     })()
+    setTimeout(() => {
+        (function addAnim() {
+            preloaderlib.classList.add('glide-anim');
+        })()
 
         
-//     // },1e3);
+    },1200);
 
-//     setTimeout(() => {
-//         preloader.classList.remove('preloader');
-//         preloader.remove();
-//     },1300)
-//     print('Preloader-lib-Working');
-// };
-// print(sNameOur.attributes[0])
+    setTimeout(() => {
+        preloaderlib.classList.remove('preloaderlib');
+        preloaderlib.remove();
+    },1500)
+   
+};
 

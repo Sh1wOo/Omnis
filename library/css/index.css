@@ -299,4 +299,29 @@
      opacity: 0;
     }
    }
+
+   .glide-anim {
+    animation-name: opacityS;
+    animation-duration: 2s;
+    /* animation-iteration-count: 1s; */
+    animation-timing-function: ubic-bezier(0.1, -0.6, 0.2, 0);
+  }
+
+  @keyframes opacityS {
+    0% {
+      background-color: rgba(46, 46, 46, .9);
+    }
+    25%{
+      background-color: rgba(46, 46, 46, .7);
+    }
+    50%{
+      background-color: rgba(189, 189, 189, 0.5);
+    }
+    75%{
+      background-color: rgba(121, 121, 121, 0.2);
+    }
+    100%{
+      background-color: rgba(124, 124, 124, 0);
+    }
+  }
  
