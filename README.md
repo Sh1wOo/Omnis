@@ -24,4 +24,4 @@
  @NoPoker - *[telegram](https://t.me/No_Poker)*
 <br> @Farneser - *[telegram](https://t.me/farneser)*
 
-[1]:(./Omnis/Omnis/preloader-module/info.md )
+[1]:(./Omnis/preloader-module/info.md )
