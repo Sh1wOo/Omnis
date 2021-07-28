@@ -26,8 +26,6 @@
 
 ```html
 <preloader-lib pbg="your hex" s-name="anim-name" s-color="anim-hex-color"></preloader-lib>
-
-<script src="Omnis/preloader-module/js/index.js"></script> 
 ```
 <h4>Adding Preloader Js</h4>
 
