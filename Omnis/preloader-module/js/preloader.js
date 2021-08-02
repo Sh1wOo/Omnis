@@ -1,6 +1,7 @@
+function sPreloader() {
 // Inizialization Backgorund
 const preloaderLib = document.querySelector('preloaderlib');
-      preloaderLib.classList.add('preloader');
+preloaderLib.classList.add('preloader')
 const pbgDetect = document.querySelector(`preloaderlib`);
 const detectedPbg = pbgDetect.attributes[0].value;
 const pbgOur = document.querySelector(`preloaderlib[pbg="${detectedPbg}"]`);
@@ -64,6 +65,22 @@ const rocketDiv = document.createElement('div');
 rocketDiv.innerHTML = `
 <img src="./Omnis/preloader-module//img/rocket.gif" alt="rocket">
 `
+// aniation parrot
+const parrotAnim = document.querySelector(`preloaderlib[s-name="parrot"]`)
+const parrotDiv = document.createElement('div')
+parrotDiv.innerHTML = `
+<div class="parrot">
+<div class="big"></div>
+<div class="middle"></div>
+<div class="small"></div>					
+</div>
+` 
+// parrot init
+const parrtotDetect = document.querySelector(`preloaderlib`);
+const parrotSname = parrtotDetect.attributes[3].value;
+const parrotOur = document.querySelector(`preloaderlib[s-parrot="${parrotSname}"]`)
+const parrotOur2 = document.querySelector(`preloaderlib[s-parrot=""]`)
+
 
 if(snameOur != snameOur2) {
     if(snameOur === defaultAnim) {
@@ -80,6 +97,18 @@ if(snameOur != snameOur2) {
     }
     if(snameOur === rocketAnim) {
         preloaderLib.appendChild(rocketDiv);
+    }
+    if(snameOur === parrotAnim) {
+        if(parrotOur !== parrotOur2) {
+            if(parrotSname[0] === '#' && parrotSname.length >= 4) {
+
+                preloaderLib.style.setProperty(`--collor-perrot`, `${parrotSname}`)
+
+            } else if (parrotSname[0] === '#' && parrotSname.length <= 4){
+                preloaderLib.style.setProperty('--collor-perrot', '#fcba03')
+            }
+            preloaderLib.appendChild(parrotDiv);
+        } else return ;
     }
 
 } else {
@@ -127,7 +156,7 @@ if (sColorOur != nothingColor) {
     }
     if(detectedCname[0] === '#' && detectedCname.length >= 4) {
         preloaderLib.style.setProperty(`--color-for-anim`, `${detectedCname}`)
-        console.log('это работает')
+        // console.log('это работает')
     } else if (detectedCname[0] === '#' && detectedCname.length <= 4){
         preloaderLib.style.setProperty('--color-for-anim', '#fcba03')
     }
@@ -165,4 +194,6 @@ window.onload = function () {
     },1500)
    
 };
+}
 
+export default sPreloader;

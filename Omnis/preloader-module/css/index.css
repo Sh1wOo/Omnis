@@ -5,6 +5,7 @@
 
 :root {
   --color-for-anim:  #fcba03;
+  --collor-perrot: #00ff00;
 }
 
 .preloader {
@@ -328,5 +329,89 @@
     100%{
       background-color: rgba(124, 124, 124, 0);
     }
+  }
+
+  .parrot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+  }
+  .parrot .big {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    transition: 0.5s;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: var(--color-for-anim);
+    border-left-color: var(--collor-perrot);
+    border-width: 100px;
+    border-style: solid;
+  }
+  .parrot .middle {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    transition: 0.5s;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: #f8d245;
+    border-bottom-color: #f2f2f2;
+    border-left-color: #ffffff;
+    border-width: 80px;
+    border-style: solid;
+  }
+  .parrot .small {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    transition: 0.5s;
+    border-radius: 50%;
+    border-right-color: var(--color-for-anim);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-width: 40px;
+    border-style: solid;
+  }
+  .parrot .small:before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: -40px;
+    border-radius: 50%;
+    background: #000;
+  }
+  .parrot:hover .big, .parrot:focus .big {
+    transform: rotate(225deg);
+    border-bottom-color: #1fe8b6;
+    border-left-color: #16d7a7;
+  }
+  .parrot:hover .middle, .parrot:focus .middle {
+    transform: rotate(-135deg);
+    border-right-color: #f8d245;
+    border-top-color: transparent;
+    border-bottom-color: #ffffff;
+    border-left-color: #f2f2f2;
+  }
+  .parrot:hover .small, .parrot:focus .small {
+    transform: rotate(135deg);
+    border-right-color: dareken(var(--color-for-anim));
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
   }
  
