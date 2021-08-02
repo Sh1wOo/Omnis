@@ -13,7 +13,7 @@
 - [ice-cream]()
 
 ***
-## For example: How to add to your Project
+## For example: How to add Preloader to your Project
 <h4>Adding Preloader Css<h4>
 
 ```html
@@ -26,8 +26,6 @@
 
 ```html
 <preloader-lib pbg="your hex" s-name="anim-name" s-color="anim-hex-color"></preloader-lib>
-
-<script src="Omnis/preloader-module/js/index.js"></script> // Adding Preloader
 ```
 <h4>Adding Preloader Js</h4>
 
