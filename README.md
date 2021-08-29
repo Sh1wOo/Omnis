@@ -1,5 +1,5 @@
 # Omnis library
-### This library consists of modules that will help you write your site.
+### This library consists of modules that will help you write your site!
 ***
 ## Last News
 #### 23.07.2021 we finished the first pre-release.
